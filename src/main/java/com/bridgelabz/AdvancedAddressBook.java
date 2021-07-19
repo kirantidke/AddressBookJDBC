@@ -35,12 +35,17 @@ public class AdvancedAddressBook {
 			sql = "INSERT INTO AddressBook VALUES ('kishor','karad','banglore','banglore',133,'9098989898','ks@gmail.com')";
 			st.executeUpdate(sql);
 			System.out.println("Inserted records into the table...");
-			*/
+			
 			//update existing contact using their name
 			
 			String sql = "update AddressBook set LastName = 'sharma',Address='Aurangabad',city='Aurangabad',zip=111,phoneNumber='9098986757',Email='ks@gmail.com' where FirstName='Ajay'";
 			st.executeUpdate(sql);
 			System.out.println("record updated from the table...");
+			*/
+			//delete persons using their name
+			String sql = "delete from AddressBook where FirstName = 'raj'";
+			st.executeUpdate(sql);
+			System.out.println("record deleted from the table...");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
