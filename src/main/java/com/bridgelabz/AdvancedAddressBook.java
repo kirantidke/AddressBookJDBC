@@ -12,47 +12,63 @@ public class AdvancedAddressBook {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
 		// create table
-		//String sql = "create table AddressBook(FirstName varchar(255),LastName varchar(255),Address varchar(255),city varchar(255),zip int,PhoneNumber varchar(10) primary key,Email varchar(255))";
+		// String sql = "create table AddressBook(FirstName varchar(255),LastName
+		// varchar(255),Address varchar(255),city varchar(255),zip int,PhoneNumber
+		// varchar(10) primary key,Email varchar(255))";
 
 		// establish connection
-		try(Connection con = DriverManager.getConnection(url, userName, password);
-		Statement st = con.createStatement();
-				){
-					// ResultSet rs = st.executeQuery("select * student");
+		try (Connection con = DriverManager.getConnection(url, userName, password);
+				Statement st = con.createStatement();) {
+			// ResultSet rs = st.executeQuery("select * student");
 
-					// execute the query
-					//st.executeUpdate(sql);
-					//System.out.println("table created successfully....");
+			// execute the query
+			// st.executeUpdate(sql);
+			// System.out.println("table created successfully....");
+			String sql;
 			/*
-			System.out.println("Inserting records into the table...");
-			String sql = "INSERT INTO AddressBook VALUES ('ajay','jagtap','pune','pune',126,'9598989898','a@gmail.com')";
+			 * System.out.println("Inserting records into the table..."); String sql =
+			 * "INSERT INTO AddressBook VALUES ('ajay','jagtap','pune','pune',126,'9598989898','a@gmail.com')"
+			 * ; st.executeUpdate(sql);
+			 * 
+			 * sql =
+			 * "INSERT INTO AddressBook VALUES ('pooja','roy','mumbai','mumbai',323,'9898989800','p@gmail.com')"
+			 * ; st.executeUpdate(sql); sql =
+			 * "INSERT INTO AddressBook VALUES ('raj','patil','delhi','delhi',464,'9078989898','r@gmail.com')"
+			 * ; st.executeUpdate(sql); sql =
+			 * "INSERT INTO AddressBook VALUES ('kishor','karad','banglore','banglore',133,'9098989898','ks@gmail.com')"
+			 * ; st.executeUpdate(sql);
+			 * System.out.println("Inserted records into the table...");
+			 * 
+			 * //update existing contact using their name
+			 * 
+			 * String sql =
+			 * "update AddressBook set LastName = 'sharma',Address='Aurangabad',city='Aurangabad',zip=111,phoneNumber='9098986757',Email='ks@gmail.com' where FirstName='Ajay'"
+			 * ; st.executeUpdate(sql);
+			 * System.out.println("record updated from the table...");
+			 * 
+			 * //delete persons using their name String sql =
+			 * "delete from AddressBook where FirstName = 'raj'"; st.executeUpdate(sql);
+			 * System.out.println("record deleted from the table...");
+			 * 
+			 * String sql = "alter table AddressBook add state varchar(255)";
+			 * st.executeUpdate(sql); sql =
+			 * "update AddressBook set state = 'UP' where FirstName='pooja'";
+			 * st.executeUpdate(sql); sql =
+			 * "update AddressBook set state = 'MH' where FirstName='kiran'";
+			 * st.executeUpdate(sql);
+			 * 
+			 */
+			// retriving person with city or state
+			sql = "select FirstName from AddressBook where city='pune'or state='MH'";
 			st.executeUpdate(sql);
+			System.out.println("person with city pune or state MH is retrived from the table...");
 
-			sql = "INSERT INTO AddressBook VALUES ('pooja','roy','mumbai','mumbai',323,'9898989800','p@gmail.com')";
-			st.executeUpdate(sql);
-			sql = "INSERT INTO AddressBook VALUES ('raj','patil','delhi','delhi',464,'9078989898','r@gmail.com')";
-			st.executeUpdate(sql);
-			sql = "INSERT INTO AddressBook VALUES ('kishor','karad','banglore','banglore',133,'9098989898','ks@gmail.com')";
-			st.executeUpdate(sql);
-			System.out.println("Inserted records into the table...");
-			
-			//update existing contact using their name
-			
-			String sql = "update AddressBook set LastName = 'sharma',Address='Aurangabad',city='Aurangabad',zip=111,phoneNumber='9098986757',Email='ks@gmail.com' where FirstName='Ajay'";
-			st.executeUpdate(sql);
-			System.out.println("record updated from the table...");
-			*/
-			//delete persons using their name
-			String sql = "delete from AddressBook where FirstName = 'raj'";
-			st.executeUpdate(sql);
-			System.out.println("record deleted from the table...");
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-			
-		//st.close();
-		//con.close();
+
+		// st.close();
+		// con.close();
 	}
 
 }
