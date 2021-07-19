@@ -23,7 +23,7 @@ public class AdvancedAddressBook {
 					// execute the query
 					//st.executeUpdate(sql);
 					//System.out.println("table created successfully....");
-
+			/*
 			System.out.println("Inserting records into the table...");
 			String sql = "INSERT INTO AddressBook VALUES ('ajay','jagtap','pune','pune',126,'9598989898','a@gmail.com')";
 			st.executeUpdate(sql);
@@ -35,6 +35,12 @@ public class AdvancedAddressBook {
 			sql = "INSERT INTO AddressBook VALUES ('kishor','karad','banglore','banglore',133,'9098989898','ks@gmail.com')";
 			st.executeUpdate(sql);
 			System.out.println("Inserted records into the table...");
+			*/
+			//update existing contact using their name
+			
+			String sql = "update AddressBook set LastName = 'sharma',Address='Aurangabad',city='Aurangabad',zip=111,phoneNumber='9098986757',Email='ks@gmail.com' where FirstName='Ajay'";
+			st.executeUpdate(sql);
+			System.out.println("record updated from the table...");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
